@@ -1,7 +1,7 @@
 <template>
     <div class="main flex-list">
         <the-categories />
-        <the-scrollable-block>
+        <the-scrollable-block @loadMore="loadMore">
             <the-card v-for="product in products" :key="product.id" :product="product" />
         </the-scrollable-block>
     </div>
@@ -41,7 +41,11 @@ export default {
                     this.products = products;
                 });
             }
-        }
+        },
+        loadMore(){
+            this.limit += 9;
+            this.getProducts();
+        },
     },
     computed: {
         ...mapGetters([ 'getCategory' ])

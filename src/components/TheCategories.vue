@@ -47,7 +47,7 @@ export default {
     width: 80%;
 }
 .active{
-    background-color: #f5f5f5;
-    color: blue;
+    background: var(--var-main-color);
+    color: var(--var-secondary-color);
 }
 </style>

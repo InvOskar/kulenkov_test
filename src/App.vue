@@ -49,7 +49,7 @@ export default {
 :root{
   --var-main-color: #1C1C1C;
   --var-secondary-color: #F38120;
-  --var-third-color: #12C868;
+  --var-third-color: rgba(0, 59, 147, 1);
 }
 * {
   margin: 0;

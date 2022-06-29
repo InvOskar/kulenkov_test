@@ -34,9 +34,14 @@ export default {
     text-align: center;
 
     cursor: pointer;
+
+    font-size: 24px;
 }
 img{
     max-height: 300px;
     max-width: 300px;
+}
+p{
+    color: var(--var-secondary-color);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <h1>Fake store</h1>
+        <h1 @click="$router.push('/')">Fake store</h1>
     </div>
 </template>
 
@@ -17,5 +17,8 @@ export default {
 
     background: var(--var-main-color);
     color: var(--var-secondary-color);
+}
+h1{
+    cursor: pointer;
 }
 </style>

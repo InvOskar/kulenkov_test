@@ -1,19 +1,17 @@
 <template>
-    <div class="scrollable flex-list">
+    <div class="scrollable flex-list" @scroll="handleScroll">
         <slot></slot>
     </div>
 </template>
 
 <script>
-import { gsap } from "gsap";
 export default {
-    mounted() {
-        gsap.from('.scrollable', {
-            delay: 0.5,
-            duration: 0.7,
-            opacity: 0,
-            y: 100,
-        });
+    methods: {
+        handleScroll(event) {
+            if (event.target.scrollTop + event.target.clientHeight >= event.target.scrollHeight - 50) {
+                this.$emit('loadMore');
+            }
+        },
     },
 }
 </script>
@@ -27,9 +25,13 @@ export default {
     padding: 50px;
 
     flex-wrap: wrap;
+    justify-content: space-evenly;
     gap: 50px;
 
-    box-shadow: 0px 7px 35px rgba(0, 59, 147, 1);
+    -webkit-box-shadow: 0px 7px 35px var(--var-third-color);
+    -moz-box-shadow: 0px 7px 35px var(--var-third-color);
+    box-shadow: 0px 7px 35px var(--var-third-color);
+
     border-radius: 30px;
 }
 </style>
